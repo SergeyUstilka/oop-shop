@@ -1,0 +1,21 @@
+{
+    "name": "sg/oop",
+    "description": "internet shop",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sergey Ustilka",
+            "email": "ya.sg-one@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master",
+        "vlucas/phpdotenv": "^2.5@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\":"application/"
+        }
+    }
+}
