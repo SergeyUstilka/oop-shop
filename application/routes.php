@@ -8,6 +8,7 @@
 return [
     '#^/blog/article/(?P<id>\d+)$#'=> 'BlogController@page',
     '#^/blog/(?P<id>\d+)*$#'=> 'BlogController@index',
+    '#^/shop/$#'=>'ShopController@main',
     '#^/$#' => 'SiteController@index',
     '#\w+#'=> 'SiteController@notFound'
 

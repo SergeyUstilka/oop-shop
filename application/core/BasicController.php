@@ -20,8 +20,13 @@ class BasicController
         echo '404';
     }
     public function render($view, $data = null){
+        if($data){
+              foreach ($data as $key => $value) {
+
+                $$key = $value;
+            }
+        }
         $view=__DIR__.'/../views/'.$view.'.php';
-        echo "<h1>$view</h1>";
         include __DIR__."/../views/layout/".$this->layout.'.php';
     }
 

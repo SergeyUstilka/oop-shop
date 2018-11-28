@@ -10,14 +10,21 @@ namespace app\controllers;
 
 
 use app\core\BasicController;
+use app\core\Helper;
+use app\core\Model;
+use app\models\Blog;
 
 class BlogController extends BasicController
 {
-    public function index(){
-        echo 'blog';
-        $this->render('blog/main');
+    public function index($data = []){
+        if(!$data['id']){
+            $data['id'] =1;
+        }
+        $pages = Blog::paginationSesult($data['id'],4);
+        $this->render('blog\\main', compact('pages'));
     }
-    public function page(){
-        echo 'page';
+    public function page($data = []){
+        $blogPage = Blog::findById($data['id']);
+        $this->render('blog\\page', compact('blogPage'));
     }
 }

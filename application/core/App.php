@@ -19,7 +19,7 @@ class App
         $url = $_SERVER['REQUEST_URI'];
         foreach ($routes as $pattern => $route){
             preg_match($pattern, $url,$matches);
-            if(!empty($matches)){
+             if(!empty($matches)){
                 break;  // останаливаем проверку если есть совпадение
             }
         }
@@ -33,6 +33,6 @@ class App
         $control = 'app\controllers\\'.$tmp[0];
         $controller = new $control;
         $method = $tmp[1];
-        $controller ->$method();
+        $controller ->$method($matches);
     }
 }

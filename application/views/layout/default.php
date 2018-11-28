@@ -6,22 +6,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="Eshopper/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Eshopper/css/font-awesome.min.css" rel="stylesheet">
-    <link href="Eshopper/css/prettyPhoto.css" rel="stylesheet">
-    <link href="Eshopper/css/price-range.css" rel="stylesheet">
-    <link href="Eshopper/css/animate.css" rel="stylesheet">
-    <link href="Eshopper/css/main.css" rel="stylesheet">
-    <link href="Eshopper/css/responsive.css" rel="stylesheet">
+    <link href="/Eshopper/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Eshopper/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Eshopper/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/Eshopper/css/price-range.css" rel="stylesheet">
+    <link href="/Eshopper/css/animate.css" rel="stylesheet">
+    <link href="/Eshopper/css/main.css" rel="stylesheet">
+    <link href="/Eshopper/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="Eshopper/Eshopper/js/html5shiv.js"></script>
-    <script src="Eshopper/js/respond.min.js"></script>
+    <script src="/Eshopper/Eshopper/js/html5shiv.js"></script>
+    <script src="/Eshopper/js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="Eshopper/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="Eshopper/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="Eshopper/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="Eshopper/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="Eshopper/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/Eshopper/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Eshopper/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Eshopper/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Eshopper/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Eshopper/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="Eshopper/images/home/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="/Eshopper/images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -162,7 +162,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="Eshopper/images/home/iframe1.png" alt="" />
+                                    <img src="/Eshopper/images/home/iframe1.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -177,7 +177,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="Eshopper/images/home/iframe2.png" alt="" />
+                                    <img src="/Eshopper/images/home/iframe2.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -192,7 +192,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="Eshopper/images/home/iframe3.png" alt="" />
+                                    <img src="/Eshopper/images/home/iframe3.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -207,7 +207,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="Eshopper/images/home/iframe4.png" alt="" />
+                                    <img src="/Eshopper/images/home/iframe4.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="Eshopper/images/home/map.png" alt="" />
+                        <img src="/Eshopper/images/home/map.png" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -307,11 +307,11 @@
 
 
 
-<script src="Eshopper/js/jquery.js"></script>
-<script src="Eshopper/js/bootstrap.min.js"></script>
-<script src="Eshopper/js/jquery.scrollUp.min.js"></script>
-<script src="Eshopper/js/price-range.js"></script>
-<script src="Eshopper/js/jquery.prettyPhoto.js"></script>
-<script src="Eshopper/js/main.js"></script>
+<script src="/Eshopper/js/jquery.js"></script>
+<script src="/Eshopper/js/bootstrap.min.js"></script>
+<script src="/Eshopper/js/jquery.scrollUp.min.js"></script>
+<script src="/Eshopper/js/price-range.js"></script>
+<script src="/Eshopper/js/jquery.prettyPhoto.js"></script>
+<script src="/Eshopper/js/main.js"></script>
 </body>
 </html>

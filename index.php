@@ -10,39 +10,17 @@ use app\controllers\BlogController;
 use app\controllers\SiteController;
 use app\core\App;
 use app\core\BasicController;
+use app\core\Db;
+use app\core\Helper;
+use app\core\Model;
+use app\models\Categories;
 use Dotenv\Dotenv;
 
 require 'vendor/autoload.php';
 $dotenv = new Dotenv(__DIR__);
 $dotenv->load();
-include 'application/config/db.php';
 
-//$route = $_SERVER['REQUEST_URI'];
-//switch ($route){
-//    case '/':
-//        $controller = new SiteController();
-//        $controller->index();
-//        break;
-//    case '/about':
-//        $controller = new SiteController();
-//        $controller->about();
-//        break;
-//    case '/blog':
-//        $controller = new BlogController();
-//        $controller->index();
-//        break;
-//    case '/page':
-//        $controller = new BlogController();
-//        $controller->page();
-//        break;
-//
-//    default:
-//        $controller = new SiteController();
-//        $controller ->erro404();
-//}
-\app\core\Db::getConnection();
-
-echo '<br>';
+echo '</br>';
 App::run();
 
 
