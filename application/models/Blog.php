@@ -15,6 +15,7 @@ class Blog extends Model
 {
     protected static $tablename;
     protected static $fields = ['id','name','content','img','autor'];
+    protected static $postOnPage;
 
     public function getShortText(){
         return substr($this->content,0,50);

@@ -20,7 +20,7 @@ class BlogController extends BasicController
         if(!$data['id']){
             $data['id'] =1;
         }
-        $pages = Blog::paginationSesult($data['id'],4);
+        $pages = Blog::getPosts($data['id'],4);
         $this->render('blog\\main', compact('pages'));
     }
     public function page($data = []){

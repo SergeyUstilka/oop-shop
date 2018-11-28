@@ -13,6 +13,7 @@ class Model
 {
     protected static $tablename;
     protected static $fields = [];
+    protected static $postOnPage;
 
     public function __construct($arr=[])
     {
@@ -38,20 +39,26 @@ class Model
     }
     public  static function findAll(){
         $pdo = Db::getConnection();
+        static::getTableName();
         $query = "SELECT * FROM `" . static::getTablename() . "`";
         $smth = $pdo->prepare($query);
         $smth->execute();
         return $smth->fetchAll();
     }
 
-    public static function paginationSesult($pageId=1,$postOnPage = 3,$resultAttr = '*'){
+    public static function getPosts($pageNumber=1,$postOnPage = 3,$resultAttr = '*'){
         $pdo = Db::getConnection();
-        $pageStart = ($pageId - 1)*$postOnPage;
-        $sql = "SELECT ".$resultAttr."  FROM ".static::getTableName()." ORDER BY id DESC LIMIT ".$pageStart.", ".$postOnPage.' ';
+        static::$postOnPage = $postOnPage;
+        $beginPostNumber = ($pageNumber - 1)*$postOnPage;
+        $sql = "SELECT ".$resultAttr."  FROM ".static::getTableName()." ORDER BY id DESC LIMIT ".$beginPostNumber.", ".$postOnPage.' ';
         Helper::debug($sql);
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+    public static function getPagination(){
+        $countPages = ceil(count(static::findAll())/static::$postOnPage);
+        return $countPages;
     }
 
     public static function selectByParams($attr){

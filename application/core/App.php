@@ -14,6 +14,7 @@ use app\controllers\SiteController;
 
 class App
 {
+    public static $pageId;
     public  static function run(){
         $routes = include __DIR__.'/../routes.php';
         $url = $_SERVER['REQUEST_URI'];
@@ -28,7 +29,11 @@ class App
                 unset($matches[$key]);
             }
         }
-        $pageId =  $matches['id']; // Id страницы, полученная из параметра в регулярном выражении
+        if(!$matches['id']){
+            static::$pageId = 1;
+        }else{
+            static::$pageId =  $matches['id']; // Id страницы, полученная из параметра в регулярном выражении
+        }
         $tmp = explode('@', $route);
         $control = 'app\controllers\\'.$tmp[0];
         $controller = new $control;

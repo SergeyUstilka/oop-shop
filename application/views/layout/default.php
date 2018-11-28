@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="/Eshopper/images/home/logo.png" alt="" /></a>
+                        <a href="index.php"><img src="/Eshopper/images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="<?=$_SERVER['PHP_SELF']?>" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
@@ -122,9 +122,9 @@
                                     <li><a href="login.html">Login</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="/blog/">Blog<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
+                                    <li><a href="/blog/">Blog List</a></li>
                                     <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
                             </li>

@@ -5,6 +5,11 @@
  * Date: 22.11.2018
  * Time: 14:14
  */
+//\app\models\Blog::getPagination();
+
+\app\core\Helper::debug(\app\models\Blog::getPagination());
+$pagination = \app\models\Blog::getPagination();
+
 ?>
 
 
@@ -39,15 +44,20 @@
                             <img src="/Eshopper/images/blog/blog-one.jpg" alt="">
                         </a>
                         <p><?=$post['content']?></p>
-                        <a class="btn btn-primary" href="">Read More</a>
+                        <a class="btn btn-primary" href="/blog/article/<?=$post['id']?>">Read More</a>
                     </div>
                     <?php endforeach ?>
+
                     <div class="pagination-area">
                         <ul class="pagination">
-                            <li><a href="" class="active">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href=""><i class="fa fa-angle-double-right"></i></a></li>
+                            <?php for($i=1;$i<$pagination;$i++){
+                                if( \app\core\App::$pageId== $i){
+                                     echo '<li><a href="/blog/'.$i.'" class="active">'.$i.'</a></li>';
+                                }else{
+                                    echo '<li><a href="/blog/'.$i.'">'.$i.'</a></li>';
+                                }
+                            }
+                           ?>
                         </ul>
                     </div>
                 </div>
