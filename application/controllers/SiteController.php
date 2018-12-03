@@ -17,14 +17,13 @@ class SiteController extends BasicController
     {
     }
     public  function index(){
-        echo 'index';
         $this->render('site/main');
     }
     public function about(){
         $this->render('site/about');
     }
     public function notFound(){
-        echo 'page 404';
+        $this->render('layout\\erro404');
     }
 
 }

@@ -16,10 +16,10 @@ use app\core\Model;
 use app\models\Categories;
 use Dotenv\Dotenv;
 
+session_start();
 require 'vendor/autoload.php';
 $dotenv = new Dotenv(__DIR__);
 $dotenv->load();
-echo '</br>';
 App::run();
 
 

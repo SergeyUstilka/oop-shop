@@ -6,11 +6,12 @@
  * Time: 14:47
  */
 //\app\core\Helper::debug($products);
+$pagination = \app\models\Product::getPagination();
 ?>
 <section>
     <div class="container">
         <div class="row">
-<?php include '../common/sidebar.php'?>
+            <?php include __DIR__.'/../common/sidebar.php'?>
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
@@ -20,10 +21,15 @@
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="/Eshopper/images/shop/product12.jpg" alt="">
-                                    <h2>BYN <?=$product['price']?></h2>
-                                    <p><?=$product['name']?></p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="/shop/product/<?=$product['id']?>">
+                                        <img src="/Eshopper/images/shop/product12.jpg" alt="">
+                                        <h2>BYN <?=$product['price']?></h2>
+                                        <p><?=$product['name']?></p>
+                                    </a>
+                                    <form action="/cart/add" method="post">
+                                        <input type="hidden" name="id" value="<?=$product['id']?>">
+                                        <button class="btn btn-default add-to-cart" type="submit" ><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="choose">
@@ -36,12 +42,18 @@
                     </div>
                     <? endforeach;?>
                     <div class="clearfix"></div>
-                    <ul class="pagination">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">»</a></li>
-                    </ul>
+                    <div class="pagination-area">
+                        <ul class="pagination">
+                            <?php for($i=1;$i<=$pagination;$i++){
+                                if( \app\core\App::$pageId== $i){
+                                    echo '<li><a href="/shop/'.$i.'" class="active">'.$i.'</a></li>';
+                                }else{
+                                    echo '<li><a href="/shop/'.$i.'">'.$i.'</a></li>';
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div><!--features_items-->
             </div>
         </div>

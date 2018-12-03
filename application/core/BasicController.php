@@ -9,7 +9,7 @@
 namespace app\core;
 
 
-class BasicController
+class    BasicController
 {
     public $layout = 'default';
     public  function  __construct()
@@ -17,7 +17,7 @@ class BasicController
     }
     public function erro404(){
         header("HTTP/1.0 404 Not Found");
-        echo '404';
+        $this->render('layout\\erro404');
     }
     public function render($view, $data = null){
         if($data){
@@ -28,6 +28,11 @@ class BasicController
         }
         $view=__DIR__.'/../views/'.$view.'.php';
         include __DIR__."/../views/layout/".$this->layout.'.php';
+    }
+
+    public function redirect($url){
+//        header("HTTP/1.1 301 Moved Permanently");
+//        header("Location: $url");
     }
 
 }

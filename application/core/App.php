@@ -11,10 +11,12 @@ namespace app\core;
 
 use app\controllers\BlogController;
 use app\controllers\SiteController;
+use app\models\Cart;
 
 class App
 {
     public static $pageId;
+
     public  static function run(){
         $routes = include __DIR__.'/../routes.php';
         $url = $_SERVER['REQUEST_URI'];
@@ -39,5 +41,7 @@ class App
         $controller = new $control;
         $method = $tmp[1];
         $controller ->$method($matches);
+
+
     }
 }
