@@ -89,30 +89,39 @@ class Model
         }
     }
 
-    public function safe()
+    public function safe($arr = [],$img = null)
     {
+
         $pdo = Db::getConnection();
-        $sql = '';
-        foreach (static::$fields as $value) {
-            $params[':' . $value] = $this->$value;
+        if($img){
+            $arr['img'] = $img['name'];
+        }else{
+            $arr['img'] = 'default.png';
+
         }
-        if ($this->id) {
-            $sql = "UPDATE " . static::getTableName() . " SET ";
-            foreach ($params as $key => $value) {
-                if ($key != 'id') {
-                    $sql .= substr($key, 1) . "= $key, ";
+        Helper::debug($arr);
+        if($arr){
+            $this->load($arr);
+        }
+        $sql = '';
+        foreach ( static::$fields  as $value){
+            $params[':'.$value]= $this->$value ;
+        }
+        if($this->id){
+            $sql = "UPDATE ".static ::getTablename()." SET ";
+            foreach ($params as $key=>$value){
+                if($key!=':id'){
+                    $sql.=substr($key, '1')."=$key, ";
                 }
             }
-
-            $sql = substr($sql, 0, -2);
-            $sql .= " WHERE id = " . $params[':id'];
-            Helper::debug($sql);
-
-        } else {
-            $sql = "INSERT INTO " . static::getTablename() . "(" . implode(',', static::$fields) . ") 
-            VALUES(" . implode(',', array_keys($params)) . ")";
+            $sql = substr($sql, 0 ,-2);
+            $sql .= ' WHERE id=:id';
+        }else{
+            $sql= "INSERT INTO ".static::getTablename()."(".implode(',',static::$fields).") 
+            VALUES(".implode(',',array_keys($params)).")";
         }
-        $stmt = $pdo->prepare($sql);
+        Helper::debug($sql);
+        $stmt= $pdo->prepare($sql);
         $stmt->execute($params);
     }
 

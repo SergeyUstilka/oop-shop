@@ -14,5 +14,6 @@ use app\core\Model;
 class Categories extends Model
 {
     protected static $tablename='category';
+    protected static $fields = ['id','name','description'];
 
 }

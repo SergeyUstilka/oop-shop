@@ -18,7 +18,7 @@ class AdminController extends BasicController
 
     public function __construct()
     {
-        $_SESSION['is_admin']=null;
+        $_SESSION['is_admin']=1;
         if(!$_SESSION['is_admin']){
             $this->redirect('/login');
         }

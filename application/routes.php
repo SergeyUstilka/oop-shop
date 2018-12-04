@@ -15,8 +15,20 @@ return [
     '#^/shop/(?P<id>\d+)*$#'=>'ShopController@main',
     '#^/login$#'=> 'LoginController@login',
 
-    ///Admin
+    ///Admin -- Category
     '#^/admin/category$#'=>'admin\\CategoryController@index',
+    '#^/admin/category/edit/(?P<id>\d+)$#'=>'admin\\CategoryController@edit',
+    '#^/admin/category/create$#'=>'admin\\CategoryController@create',
+    '#^/admin/category/store/(?P<id>\d+)*$#'=>'admin\\CategoryController@store',
+    '#^/admin/category/store$#'=>'admin\\CategoryController@store',
+
+    ///Admin -- Product
+    '#^/admin/product$#'=>'admin\\ProductController@index',
+    '#^/admin/product/edit/(?P<id>\d+)$#'=>'admin\\ProductController@edit',
+    '#^/admin/product/create$#'=>'admin\\ProductController@create',
+    '#^/admin/product/store/(?P<id>\d+)*$#'=>'admin\\ProductController@store',
+    '#^/admin/product/store$#'=>'admin\\ProductController@store',
+
 
     // Главная страница и 404
     '#^/$#' => 'SiteController@index',

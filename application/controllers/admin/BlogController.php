@@ -9,7 +9,7 @@
 namespace app\controllers\admin;
 
 
-class BlogController
+class BlogController extends AdminController
 {
 
 }
