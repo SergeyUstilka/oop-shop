@@ -12,10 +12,12 @@ namespace app\core;
 use app\controllers\BlogController;
 use app\controllers\SiteController;
 use app\models\Cart;
+use app\models\User;
 
 class App
 {
     public static $pageId;
+
 
     public  static function run(){
         $routes = include __DIR__.'/../routes.php';
@@ -44,4 +46,14 @@ class App
 
 
     }
+
+    public static function user(){
+        if($_SESSION['user']){
+            return $_SESSION['user'];
+        }else{
+            return null;
+        }
+    }
+
+
 }

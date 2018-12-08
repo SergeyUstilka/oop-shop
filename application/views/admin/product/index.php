@@ -30,7 +30,7 @@
                         <td><?=$products[$i]['description']?></td>
                         <td><?=$products[$i]['category_id']?></td>
                         <td><?=$products[$i]['brand_id']?></td>
-                        <td><img src="../upload/product/<?=$products[$i]['img']?>"></td>
+                        <td><img src="../public/product/<?=$products[$i]['img']?>"></td>
                         <td>
                             <a href="/admin/product/edit/<?=$products[$i]['id']?>" class="btn btn-secondary">Редактировать</a>
                             <a href="/admin/product/store/<?=$products[$i]['id']?>" class="btn btn-danger">Удалить</a>

@@ -14,6 +14,8 @@ return [
     '#^/blog/(?P<id>\d+)*$#'=> 'BlogController@index',
     '#^/shop/(?P<id>\d+)*$#'=>'ShopController@main',
     '#^/login$#'=> 'LoginController@login',
+    '#^/postlogin$#'=> 'LoginController@postlogin',
+    '#^/registration$#'=> 'LoginController@registration',
 
     ///Admin -- Category
     '#^/admin/category$#'=>'admin\\CategoryController@index',
@@ -29,6 +31,7 @@ return [
     '#^/admin/product/store/(?P<id>\d+)*$#'=>'admin\\ProductController@store',
     '#^/admin/product/store$#'=>'admin\\ProductController@store',
 
+    '#^/admin/product/(?P<id>\d+)*/photos/$#'=>'admin\\ProductController@photos',
 
     // Главная страница и 404
     '#^/$#' => 'SiteController@index',

@@ -31,8 +31,8 @@ class    BasicController
     }
 
     public function redirect($url){
-//        header("HTTP/1.1 301 Moved Permanently");
-//        header("Location: $url");
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: $url");
     }
 
 }

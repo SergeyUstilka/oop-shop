@@ -1,8 +1,11 @@
+<?php
+
+?>
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header"><strong>Товар</strong><small> Добавить</small></div>
         <div class="card-body card-block">
-            <form action="/admin/product/store/" method="post" enctype="multipart/form-data" >
+            <form action="/admin/product/create" method="post" enctype="multipart/form-data" >
                 <div class="form-group"><label for="name" class=" form-control-label">Название</label>
                     <input type="text" id="name"  class="form-control" name="name">
                 </div>
@@ -31,9 +34,7 @@
                 <div class="form-groupt">
                     <input type="file" name="image">
                 </div>
-<!--                <div class="form-group"><label for="img" class=" form-control-label">Изображение</label>-->
-<!--                    <input type="text" id="img"  class="form-control" name="img">-->
-<!--                </div>-->
+
 
                 <button type="submit">Добавить</button>
             </form>

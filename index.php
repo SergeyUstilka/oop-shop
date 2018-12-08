@@ -20,6 +20,11 @@ session_start();
 require 'vendor/autoload.php';
 $dotenv = new Dotenv(__DIR__);
 $dotenv->load();
+
+//Helper::debug(App::user());
+//unset($_SESSION['user']);
+//Helper::debug(App::user());
+
 App::run();
 
 

@@ -9,8 +9,10 @@
 namespace app\controllers\admin;
 
 
+use app\core\App;
 use app\core\BasicController;
 use app\core\Helper;
+use app\models\User;
 
 class AdminController extends BasicController
 {
@@ -18,9 +20,11 @@ class AdminController extends BasicController
 
     public function __construct()
     {
-        $_SESSION['is_admin']=1;
-        if(!$_SESSION['is_admin']){
-            $this->redirect('/login');
+
+        if(!User::isAdmin()){
+            echo '11111111';
+            die();
+//            $this->redirect('/login');
         }
     }
 }

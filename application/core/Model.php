@@ -31,7 +31,20 @@ class Model
         $stmt->execute([$id]);
         $data = $stmt->fetch();
         return new static($data);
+    }
 
+    public static function findBy($param, $value){
+        static::getTableName();
+        $pdo = Db::getConnection();
+        $sql = "SELECT * from `" . static::$tablename . "` WHERE ".$param." = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$value]);
+        $data = $stmt->fetchAll();
+        $res = [];
+        foreach ($data as $exempliar){
+            $res[] = new static($exempliar);
+         }
+         return $res;
     }
 
     public static function findAll()
@@ -89,23 +102,24 @@ class Model
         }
     }
 
-    public function safe($arr = [],$img = null)
+    public function uploadPhoto($image, $folder = 'product'){
+        $filename = md5($image['name'].''.microtime()).'.'.explode('.',$image['name'])[1];
+        $this->img = $filename;
+        move_uploaded_file($image['tmp_name'], __DIR__.'/../../public/'.$folder.'/'.$filename);
+    }
+
+    public function safe($arr = [])
     {
-
         $pdo = Db::getConnection();
-        if($img){
-            $arr['img'] = $img['name'];
-        }else{
-            $arr['img'] = 'default.png';
-
-        }
-        Helper::debug($arr);
         if($arr){
             $this->load($arr);
         }
         $sql = '';
         foreach ( static::$fields  as $value){
-            $params[':'.$value]= $this->$value ;
+            if($value!= 'id'){
+                $params[':'.$value]= $this->$value ;
+
+            }
         }
         if($this->id){
             $sql = "UPDATE ".static ::getTablename()." SET ";
@@ -119,8 +133,8 @@ class Model
         }else{
             $sql= "INSERT INTO ".static::getTablename()."(".implode(',',static::$fields).") 
             VALUES(".implode(',',array_keys($params)).")";
+            Helper::debug($sql);
         }
-        Helper::debug($sql);
         $stmt= $pdo->prepare($sql);
         $stmt->execute($params);
     }

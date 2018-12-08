@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header"><strong>Товар</strong><small> редактировать</small></div>
         <div class="card-body card-block">
-            <form action="/admin/product/store/<?=$product->id?>" method="post" enctype="multipart/form-data" >
+            <form  method="post" enctype="multipart/form-data" >
                 <div class="form-group"><label for="name" class=" form-control-label">Название</label>
                     <input type="text" id="name"  class="form-control" name="name" value="<?=$product->name?>">
                 </div>
@@ -38,8 +38,12 @@
                     </select>
 
                 </div>
-                <div class="form-group"><label for="img" class=" form-control-label">Изображение</label>
-                    <input type="text" id="img"  class="form-control" name="img" value="<?=$product->img?>">
+                <div class="form-group">
+                    <label  class=" form-control-label">Загрузить другое изображение</label>
+                </br><input type="file" name="image">
+                </div>
+                <div class="form-group col-md-4"><label for="img" class=" form-control-label">Изображение</label>
+                    <img src="/public/product/<?=$product->img?>">
                 </div>
 
                 <button type="submit">Добавить</button>
